@@ -1,0 +1,24 @@
+[project]
+name = "envdeploy-cli"
+version = "0.1.0"
+description = "Production-grade Automated Environment Setup & Deployment CLI"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "typer[all]>=0.9.0",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+    "python-dotenv>=1.0",
+]
+
+[project.scripts]
+envdeploy = "envdeploy.cli:main"
+
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["envdeploy*"]
+namespaces = false
